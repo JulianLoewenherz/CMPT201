@@ -22,14 +22,8 @@ int main(void) {
       free(buff);
       return 1;
     }
-
-    if (buff[num_char - 1] == '\n') {
-      buff[num_char - 1] = '\0';
-    }
-
     // we now have everything we need in the buffer and can loop thorugh and
     // print
-    printf("Tokens:\n");
 
     char *saveptr;
     char *token = strtok_r(buff, " ", &saveptr);
@@ -42,5 +36,6 @@ int main(void) {
 
     // freeing everything
     free(buff);
+
   }
 }

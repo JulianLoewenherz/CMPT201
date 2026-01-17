@@ -1,0 +1,20 @@
+#define _POSIX_C_SOURCE 200809L
+#include <stdio.h>
+
+// writing prgrm that recieves line of user input and tokenizes with delimiter
+// prints out one token at a time on a new line and loops to accept new input
+
+int main(void) {
+
+  // using getline and printing the buffer
+  char *buff = NULL;
+  size_t size = 0;
+  ssize_t num_char = getline(&buff, &size, stdin);
+
+  printf("please enter some text");
+
+  // freeing everything
+  free(buff);
+
+  return 0;
+}
