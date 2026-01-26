@@ -22,7 +22,7 @@ int main(void) {
       free(buff);
       return 1;
     }
-    // fixing newline issue
+    //fixing newline issue
     if (buff[num_char - 1] == '\n') {
       buff[num_char - 1] = '\0';
     }

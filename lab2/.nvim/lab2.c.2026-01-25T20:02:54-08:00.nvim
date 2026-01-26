@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<stdbool.h>
+// program must recieve user input from the keyboard that is the path of a
+// program executes the command the user typed in
+//  repeates the above two steps forever
+
+// large scale idea: I'd have a process going and then whenever the user enters
+// input I fork with this fork I then do execl() and execute the users input. I
+// have the parent wait till this fork (or any child is done). when using
+// waitpid I have to check if the result was not -1. wstatus stores the exit
+// status of the process.
+
+int main(void){
+  while(true){
+    char *buffptr = NULL;
+    int size;  
+    getline(&buffptr, &size,stdin); 
+    printf("printing out the input: %s", *buffptr);
+    // I have to free buffptr
+    free(buffptr);
+
+    
+  }
+
+
+  return 0;
+}
